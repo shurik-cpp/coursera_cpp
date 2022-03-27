@@ -1,0 +1,13 @@
+4
+
+2 Marushkino Kokoshkino
+    New bus 1
+
+1 Kokoshkino
+    New bus 2
+
+2 Marushkino Kokoshkino
+    Already exists for 1
+
+2 Kokoshkino Marushkino
+    New bus 3

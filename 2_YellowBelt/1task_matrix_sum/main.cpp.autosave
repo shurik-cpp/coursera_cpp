@@ -1,0 +1,47 @@
+#include <iostream>
+#include <fstream>
+#include <stdexcept>
+#include <vector>
+
+using namespace std;
+
+class Matrix {
+  // Если количество строк или количество столбцов, переданное
+  // в конструктор класса Matrix или метод Reset, оказалось отрицательным,
+  // то должно быть выброшено стандартное исключение out_of_range.
+                                                                                                                              Это же исключение должен бросать метод At, если переданная в него ячейка выходит за границы матрицы.
+public:
+  Matrix() {}
+  // следующий конструктор задает количество строк и столбцов матрицы соответственно
+  Matrix(const int& rows, const int& columns);
+
+  // метод Reset меняет размеры матрицы на заданные и обнуляет все её элементы
+  void Reset(const int& new_rows, const int& new_columns);
+
+  // константный метод At, который принимает номер строки и номер столбца
+  // (именно в этом порядке; нумерация строк и столбцов начинается с нуля) и
+  // возвращает значение в соответствущей ячейке матрицы
+  int At(const int& row, const int& column) const;
+
+  // неконстантный метод At с такими же параметрами, но
+  // возвращающий ссылку на значение в соответствущей ячейке матрицы
+  int& At(const int& row, const int& column);
+
+  // константный метод GetNumRows возвращает количество строк матрицы
+  int GetNumRows() const;
+
+  // константный метод GetNumColumns возвращают количество столбцов матрицы
+  int GetNumColumns() const;
+
+private:
+  vector<vector<int>> matrix; // первый вектор - строки, вложенный вектор - столбцы матрицы
+};
+
+int main() {
+  Matrix one;
+  Matrix two;
+
+  cin >> one >> two;
+  cout << one + two << endl;
+  return 0;
+}

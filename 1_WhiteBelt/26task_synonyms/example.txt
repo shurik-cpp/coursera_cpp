@@ -1,0 +1,45 @@
+8
+ADD program code
+
+COUNT cipher
+	0
+
+ADD code cipher
+
+COUNT code
+	2
+
+COUNT program
+	1
+
+CHECK code program
+	YES
+
+CHECK program cipher
+	NO
+
+CHECK cpp java
+	NO
+==============================
+Input:
+5
+ADD cpp java
+ADD java python
+ADD haskell java
+
+COUNT java
+	3
+
+CHECK java cpp
+	YES
+==============================
+6
+ADD a b
+ADD c d
+ADD d a
+ADD d c
+ADD b d
+COUNT d
+
+Correct output:
+3
