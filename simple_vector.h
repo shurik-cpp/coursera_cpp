@@ -48,7 +48,7 @@ SimpleVector<T>::SimpleVector(const SimpleVector<T>& other)
     // при помощи <algorithm>
 		std::copy(other.begin(), other.end(), this->begin());
 }
-// конструктор перемещения (не const параметр, но по rvalue-ссылке (&&)):
+// конструктор перемещения (не const параметр, но по rvalue-ссылке (&&)): (https://habr.com/ru/post/226229/)
 template <typename T>
 SimpleVector<T>::SimpleVector(SimpleVector<T>&& other)
   : data(other.data)
